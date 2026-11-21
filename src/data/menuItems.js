@@ -5,7 +5,7 @@ const menuItems = [
     description: 'Crispy fried pastry filled with spiced potatoes and peas',
     price: 15,
     category: 'Snacks',
-    image: 'https://placehold.co/300x200?text=Samosa',
+    image: '/samosa.jpg',
     isVeg: true,
     prepTime: 5,
   },
