@@ -48,7 +48,7 @@ export default function Navbar() {
                 <span className="text-xl">🍛</span>
               </motion.div>
               <span className="text-xl font-bold gradient-text">
-                Munchcue
+                guu kha
               </span>
             </Link>
 
