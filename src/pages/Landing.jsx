@@ -39,9 +39,9 @@ const stats = [
 ]
 
 const testimonials = [
-  { name: 'sarth saste', role: 'B.Tech CSE, 3rd Year', text: 'CampusBite saved me so much time! I order during my morning lecture and my paratha is ready when I reach the canteen.', avatar: '👩‍🎓' },
-  { name: 'sumit patil', role: 'B.tech,AI&DS, 2nd Year', text: 'No more standing in line for 20 minutes. The best thing to happen to our college canteen!', avatar: '👨‍🎓' },
-  { name: 'tanmay lalit', role: 'B Tech,E&TC, 1st Year', text: 'Love the UI and how smooth the ordering is. The combo meals are a great deal too!', avatar: '👩‍🔬' },
+  { name: 'sarth saste', role: 'B.Tech AI&DS, 1rd Year', text: 'CampusBite saved me so much time! I order during my morning lecture and my paratha is ready when I reach the canteen.', avatar: '👩‍🎓' },
+  { name: 'sumit patil', role: 'B.tech,IT, 1nd Year', text: 'No more standing in line for 20 minutes. The best thing to happen to our college canteen!', avatar: '👨‍🎓' },
+  { name: 'tanmay lalit', role: 'B Tech,CSE, 3st Year', text: 'Love the UI and how smooth the ordering is. The combo meals are a great deal too!', avatar: '👩‍🔬' },
 ]
 
 export default function Landing() {
