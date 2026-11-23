@@ -42,7 +42,7 @@ const stats = [
 const testimonials = [
   { name: 'sarth saste', role: 'B.Tech, AI&DS, 1st Year', text: 'CampusBite saved me so much time! I order during my morning lecture and my paratha is ready when I reach the canteen.', avatar: '👩‍🎓' },
   { name: 'sumit patil', role: 'B.tech,IT, 1st Year', text: 'No more standing in line for 20 minutes. The best thing to happen to our college canteen!', avatar: '👨‍🎓' },
-  { name: 'yash rathod', role: 'B Tech,CSE, 3rd Year', text: 'Love the UI and how smooth the ordering is. The combo meals are a great deal too!', avatar: '👩‍🔬' },
+  { name: 'yashika rathod', role: 'B Tech,CSE, 3rd Year', text: 'Love the UI and how smooth the ordering is. The combo meals are a great deal too!', avatar: '👩‍🔬' },
 ]
 
 export default function Landing() {
@@ -203,7 +203,7 @@ export default function Landing() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-left mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-4">
               Why <span className="gradient-text">Munchcue</span>?
