@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import { ArrowRight, Clock, ShieldCheck, Zap, UtensilsCrossed, Users, Star } from 'lucide-react'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
+import { useAuth } from '../context/AuthContext'
 
 const features = [
   {
@@ -45,6 +46,8 @@ const testimonials = [
 ]
 
 export default function Landing() {
+  const { currentUser } = useAuth()
+
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
@@ -116,25 +119,51 @@ export default function Landing() {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="flex flex-col sm:flex-row gap-4 justify-center"
           >
-            <Link to="/signup">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 bg-white text-primary-700 rounded-2xl font-bold text-lg shadow-2xl shadow-black/20 hover:shadow-3xl flex items-center gap-2 group"
-              >
-                Get Started Free
-                <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
-              </motion.button>
-            </Link>
-            <Link to="/menu">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 bg-white/10 text-white border-2 border-white/30 rounded-2xl font-bold text-lg backdrop-blur-sm hover:bg-white/20 transition-all"
-              >
-                Browse Menu
-              </motion.button>
-            </Link>
+            {currentUser ? (
+              <>
+                <Link to="/menu">
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="px-8 py-4 bg-white text-primary-700 rounded-2xl font-bold text-lg shadow-2xl shadow-black/20 hover:shadow-3xl flex items-center gap-2 group"
+                  >
+                    Browse Menu
+                    <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
+                  </motion.button>
+                </Link>
+                <Link to="/orders">
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="px-8 py-4 bg-white/10 text-white border-2 border-white/30 rounded-2xl font-bold text-lg backdrop-blur-sm hover:bg-white/20 transition-all"
+                  >
+                    My Orders
+                  </motion.button>
+                </Link>
+              </>
+            ) : (
+              <>
+                <Link to="/signup">
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="px-8 py-4 bg-white text-primary-700 rounded-2xl font-bold text-lg shadow-2xl shadow-black/20 hover:shadow-3xl flex items-center gap-2 group"
+                  >
+                    Get Started Free
+                    <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
+                  </motion.button>
+                </Link>
+                <Link to="/menu">
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="px-8 py-4 bg-white/10 text-white border-2 border-white/30 rounded-2xl font-bold text-lg backdrop-blur-sm hover:bg-white/20 transition-all"
+                  >
+                    Browse Menu
+                  </motion.button>
+                </Link>
+              </>
+            )}
           </motion.div>
         </div>
 
@@ -295,35 +324,37 @@ export default function Landing() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20">
-        <div className="max-w-4xl mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            className="rounded-3xl animated-gradient p-12 text-center relative overflow-hidden"
-          >
-            <div className="relative z-10">
-              <h2 className="text-4xl md:text-5xl font-black text-white mb-4">
-                Ready to Skip the Queue?
-              </h2>
-              <p className="text-lg text-white/80 mb-8 max-w-lg mx-auto">
-                Join hundreds of students who are already ordering smarter. Sign up now — it's free!
-              </p>
-              <Link to="/signup">
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="px-10 py-4 bg-white text-primary-700 rounded-2xl font-bold text-lg shadow-2xl hover:shadow-3xl inline-flex items-center gap-2 group"
-                >
-                  Create Free Account
-                  <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
-                </motion.button>
-              </Link>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+      {!currentUser && (
+        <section className="py-20">
+          <div className="max-w-4xl mx-auto px-6">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              className="rounded-3xl animated-gradient p-12 text-center relative overflow-hidden"
+            >
+              <div className="relative z-10">
+                <h2 className="text-4xl md:text-5xl font-black text-white mb-4">
+                  Ready to Skip the Queue?
+                </h2>
+                <p className="text-lg text-white/80 mb-8 max-w-lg mx-auto">
+                  Join hundreds of students who are already ordering smarter. Sign up now — it's free!
+                </p>
+                <Link to="/signup">
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="px-10 py-4 bg-white text-primary-700 rounded-2xl font-bold text-lg shadow-2xl hover:shadow-3xl inline-flex items-center gap-2 group"
+                  >
+                    Create Free Account
+                    <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
+                  </motion.button>
+                </Link>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+      )}
 
       <Footer />
     </div>

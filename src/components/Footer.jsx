@@ -1,7 +1,10 @@
 import { Heart, Mail } from 'lucide-react'
 import { Link } from 'react-router-dom'
+import { useAuth } from '../context/AuthContext'
 
 export default function Footer() {
+  const { currentUser } = useAuth()
+
   return (
     <footer className="bg-gray-900 text-gray-400 mt-auto">
       <div className="max-w-7xl mx-auto px-6 py-12">
@@ -21,9 +24,17 @@ export default function Footer() {
             <h4 className="text-white font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2 text-sm">
               <li><Link to="/menu" className="hover:text-primary-400 transition-colors">Menu</Link></li>
-              <li><Link to="/orders" className="hover:text-primary-400 transition-colors">My Orders</Link></li>
-              <li><Link to="/login" className="hover:text-primary-400 transition-colors">Login</Link></li>
-              <li><Link to="/signup" className="hover:text-primary-400 transition-colors">Sign Up</Link></li>
+              {currentUser ? (
+                <>
+                  <li><Link to="/orders" className="hover:text-primary-400 transition-colors">My Orders</Link></li>
+                  <li><Link to="/cart" className="hover:text-primary-400 transition-colors">Cart</Link></li>
+                </>
+              ) : (
+                <>
+                  <li><Link to="/login" className="hover:text-primary-400 transition-colors">Login</Link></li>
+                  <li><Link to="/signup" className="hover:text-primary-400 transition-colors">Sign Up</Link></li>
+                </>
+              )}
             </ul>
           </div>
           <div>
