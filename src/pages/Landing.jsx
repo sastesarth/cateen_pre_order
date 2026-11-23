@@ -237,7 +237,7 @@ export default function Landing() {
 
       {/* How It Works */}
       <section className="py-20 bg-white">
-        <div className="max-w-6xl text-left px-6">
+        <div className="max-w-6xl  mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -282,7 +282,7 @@ export default function Landing() {
 
       {/* Testimonials */}
       <section className="py-20 bg-gradient-to-br from-primary-50 via-white to-accent-50">
-        <div className="max-w-6xl text-left px-6">
+        <div className="max-w-6xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
