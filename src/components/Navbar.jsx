@@ -37,7 +37,7 @@ export default function Navbar() {
       className="fixed top-0 left-0 right-0 z-50"
     >
       <div className="mx-4 mt-4">
-        <div className="glass rounded-2xl shadow-lg shadow-purple-500/10 px-6 py-3">
+        <div className="glass rounded-2xl shadow-lg shadow-emerald-500/10 px-6 py-3">
           <div className="flex items-center justify-between">
             {/* Logo */}
             <Link to="/" className="flex items-center gap-2 group">
@@ -88,7 +88,7 @@ export default function Navbar() {
                           <motion.span
                             initial={{ scale: 0 }}
                             animate={{ scale: 1 }}
-                            className="absolute -top-1 -right-1 w-5 h-5 rounded-full bg-gradient-to-r from-pink-500 to-red-500 text-white text-xs flex items-center justify-center font-bold"
+                            className="absolute -top-1 -right-1 w-5 h-5 rounded-full bg-gradient-to-r from-emerald-500 to-green-600 text-white text-xs flex items-center justify-center font-bold"
                           >
                             {itemCount}
                           </motion.span>

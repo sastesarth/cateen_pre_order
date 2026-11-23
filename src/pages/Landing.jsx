@@ -27,7 +27,7 @@ const features = [
     icon: UtensilsCrossed,
     title: 'Full Canteen Menu',
     description: 'All your canteen favourites — from samosa and chai to thali and biryani.',
-    gradient: 'from-purple-500 to-pink-400',
+    gradient: 'from-emerald-500 to-green-400',
   },
 ]
 
