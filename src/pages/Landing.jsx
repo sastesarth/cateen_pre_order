@@ -208,7 +208,7 @@ export default function Landing() {
             <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-4">
               Why <span className="gradient-text">Munchcue</span>?
             </h2>
-            <p className="text-lg text-gray-500 max-w-xl mx-auto">
+            <p className="text-lg text-gray-500 max-w-xl text-left">
               Everything you need for a hassle-free canteen experience
             </p>
           </motion.div>
@@ -237,14 +237,14 @@ export default function Landing() {
 
       {/* How It Works */}
       <section className="py-20 bg-white">
-        <div className="max-w-6xl mx-auto px-6">
+        <div className="max-w-6xl text-left px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="text-left mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-16">
+            <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-4">
               How It <span className="gradient-text">Works</span>
             </h2>
             <p className="text-lg text-gray-500">Three simple steps to your meal</p>
@@ -282,14 +282,14 @@ export default function Landing() {
 
       {/* Testimonials */}
       <section className="py-20 bg-gradient-to-br from-primary-50 via-white to-accent-50">
-        <div className="max-w-6xl mx-auto px-6">
+        <div className="max-w-6xl text-left px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="text-left mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-16">
+            <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-4">
               Students <span className="gradient-text">Love It</span>
             </h2>
           </motion.div>
